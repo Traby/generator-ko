@@ -38,10 +38,12 @@ KoGenerator.prototype.askFor = function askFor() {
 
 KoGenerator.prototype.app = function app() {
     this.mkdir('app');
+    this.mkdir('app/components');
     this.mkdir('test');
 
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
+    this.copy('bowerrc.json', '.bowerrc');
 };
 
 KoGenerator.prototype.projectfiles = function projectfiles() {
