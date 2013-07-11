@@ -1,5 +1,14 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+
+    "name": "package",
+    "version": "0.0.0",
+    "dependencies": {
+
+    },
+
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-jshint": "latest"
+    }
+
 }

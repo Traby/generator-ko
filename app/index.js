@@ -44,11 +44,11 @@ KoGenerator.prototype.app = function app() {
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
     this.copy('bowerrc.json', '.bowerrc');
+    this.copy('Gruntfile.js', 'Gruntfile.js');
 };
 
 KoGenerator.prototype.projectfiles = function projectfiles() {
     this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
 };
 
 KoGenerator.prototype.website = function website() {
@@ -59,4 +59,3 @@ KoGenerator.prototype.website = function website() {
     this.copy('website/js/home.js', 'app/js/home.js');
     this.copy('website/views/home.html', 'app/views/home.html');
 };
-
