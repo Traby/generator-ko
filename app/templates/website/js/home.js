@@ -5,9 +5,9 @@
 // ======================================================================
 // Home Controller
 // ======================================================================
-function HomeCtrl($scope, $log) {
+function HomeCtrl() {
 
     'use strict';
 
 }
-HomeCtrl.$inject = ['$scope', '$log'];
+HomeCtrl.$inject = [];

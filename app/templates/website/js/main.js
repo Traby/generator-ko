@@ -14,7 +14,7 @@ app.config(function ($routeProvider, $locationProvider) {
     app.routeProvider = $routeProvider;
 });
 
-app.run(['$rootScope', '$location', function ($rootScope, $location) {
+app.run([function () {
 
     'use strict';
 
