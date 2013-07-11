@@ -1,4 +1,4 @@
-# Generator-ko
+# generator ko
 [![Build Status](https://secure.travis-ci.org/kwo/generator-ko.png?branch=master)](https://travis-ci.org/kwo/generator-ko)
 
 A generator for Yeoman.
