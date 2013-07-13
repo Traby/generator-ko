@@ -5,9 +5,20 @@
 // ======================================================================
 // Home Controller
 // ======================================================================
-function HomeCtrl() {
+
+define(['app'], function (app) {
 
     'use strict';
 
-}
-HomeCtrl.$inject = [];
+    return app.controller('HomeCtrl', ['$scope',
+
+        function HomeCtrl($scope) {
+
+            $scope.message = 'let\'s get busy';
+
+        }
+
+    ]);
+
+});
+

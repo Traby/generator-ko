@@ -32,6 +32,9 @@ module.exports = function (grunt) {
                     'app/components/**'
                 ],
                 'globals': {
+                    require: true,
+                    define: true,
+                    document: true,
                     angular: true
                 }
             }

@@ -3,27 +3,33 @@
  */
 
 // --------------------------------------------------------------------------
-// A P P
+// RequireJS configuration
 // --------------------------------------------------------------------------
-
-var app = angular.module('koapp', []);
-
-app.config(function ($routeProvider, $locationProvider) {
-    'use strict';
-    $locationProvider.hashPrefix('!');
-    app.routeProvider = $routeProvider;
+require.config({
+	paths: {
+		angular: '../components/angular/angular'
+	},
+	shim: {
+		'angular': {'exports' : 'angular'}
+	},
+	priority: [
+		'angular'
+	]
 });
 
-app.run([function () {
+// --------------------------------------------------------------------------
+// application starting point
+// --------------------------------------------------------------------------
+require([
+
+    'angular',
+    'app',
+    'home'
+
+], function (angular) {
 
     'use strict';
 
-    // load routes
-    app.routeProvider.when('/home', {templateUrl: 'views/home.html'});
+    angular.bootstrap(document, ['app']);
 
-    // set fallback path to first view
-    app.routeProvider.otherwise({redirectTo: '/home'});
-
-    delete app.routeProvider;
-
-}]);
+});
