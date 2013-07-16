@@ -6,24 +6,18 @@
 // A P P
 // --------------------------------------------------------------------------
 
-define(['angular'], function (angular) {
+var app = angular.module('koapp', []);
+
+app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
     'use strict';
 
-    var app = angular.module('app', []);
+    $locationProvider.hashPrefix('!');
 
-    app.config(function ($routeProvider, $locationProvider) {
+    // load routes
+    $routeProvider.when('/home', {templateUrl: 'views/home.html'});
 
-        $locationProvider.hashPrefix('!');
+    // set fallback path to first view
+    $routeProvider.otherwise({redirectTo: '/home'});
 
-        // load routes
-        $routeProvider.when('/home', {templateUrl: 'views/home.html'});
-
-        // set fallback path to first view
-        $routeProvider.otherwise({redirectTo: '/home'});
-
-    });
-
-    return app;
-
-});
+}]);

@@ -6,19 +6,11 @@
 // Home Controller
 // ======================================================================
 
-define(['app'], function (app) {
+function HomeCtrl($scope) {
 
     'use strict';
 
-    return app.controller('HomeCtrl', ['$scope',
+    $scope.message = 'let\'s get busy';
 
-        function HomeCtrl($scope) {
-
-            $scope.message = 'let\'s get busy';
-
-        }
-
-    ]);
-
-});
-
+}
+HomeCtrl.$inject = ['$scope'];

@@ -55,7 +55,6 @@ KoGenerator.prototype.website = function website() {
     this.mkdir('app/js');
     this.mkdir('app/views');
     this.copy('website/index.html', 'app/index.html');
-    this.copy('website/js/main.js', 'app/js/main.js');
     this.copy('website/js/app.js', 'app/js/app.js');
     this.copy('website/js/home.js', 'app/js/home.js');
     this.copy('website/views/home.html', 'app/views/home.html');
