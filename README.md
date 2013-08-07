@@ -13,6 +13,5 @@ A generator for Yeoman.
 
 ## Roadmap
 - e2e
-- bootstrap less
 - minification and concatination
 - deploy step

@@ -38,6 +38,7 @@ KoGenerator.prototype.askFor = function askFor() {
 
 KoGenerator.prototype.app = function app() {
     this.mkdir('app');
+    this.mkdir('etc');
     this.mkdir('app/components');
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
@@ -67,9 +68,14 @@ KoGenerator.prototype.website = function website() {
 
 };
 
+KoGenerator.prototype.style = function style() {
+
+    this.copy('etc/main.less', 'etc/main.less');
+
+};
+
 KoGenerator.prototype.testing = function testing() {
 
-    this.mkdir('etc');
     this.copy('etc/karma.conf.js', 'etc/karma.conf.js');
 
     this.mkdir('test');

@@ -61,13 +61,29 @@ module.exports = function (grunt) {
             unit: {
                 configFile: 'etc/karma.conf.js'
             }
+        },
+
+        recess: {
+            build:  {
+                src: [ 'etc/main.less' ],
+                dest: 'app/style.css',
+                options: {
+                    compile: true,
+                    compress: true,
+                    noUnderscores: false,
+                    noIDs: false,
+                    zeroUnits: false
+                }
+            }
         }
 
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-recess');
 
-    grunt.registerTask('default', ['karma:unit', 'jshint']);
+    grunt.registerTask('test', ['karma:unit', 'jshint']);
+    grunt.registerTask('default', ['recess']);
 
 };
