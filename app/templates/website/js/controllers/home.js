@@ -6,11 +6,10 @@
 // Home Controller
 // ======================================================================
 
-function HomeCtrl($scope, cfg) {
+angular.module('controllers').controller('HomeCtrl', ['$scope', 'configuration', function ($scope, cfg) {
 
     'use strict';
 
-    $scope.message = cfg.getAppName();
+    $scope.title = cfg.getAppName();
 
-}
-HomeCtrl.$inject = ['$scope', 'configuration'];
+}]);

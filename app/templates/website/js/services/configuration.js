@@ -6,12 +6,12 @@
 // Configuration Service
 // ======================================================================
 
-angular.module('koapp.services').factory('configuration', [function () {
+angular.module('services').factory('configuration', [function () {
 
     'use strict';
 
     function getAppName() {
-        return 'KO APP';
+        return 'My App';
     }
 
     return {

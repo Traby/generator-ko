@@ -1,11 +1,11 @@
-describe('koApp', function () {
+describe('app', function () {
 
     'use strict';
 
     var module, dependencies;
 
     beforeEach(function () {
-        module = angular.module('koapp');
+        module = angular.module('app');
         dependencies = module.requires;
     });
 
@@ -20,7 +20,8 @@ describe('koApp', function () {
         };
 
         it('check services module is dependency of app', function () {
-            expect(hasModule('koapp.services')).toBe(true);
+            expect(hasModule('services')).toBe(true);
+            expect(hasModule('controllers')).toBe(true);
         });
 
     });

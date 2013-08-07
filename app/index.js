@@ -81,4 +81,7 @@ KoGenerator.prototype.testing = function testing() {
     this.mkdir('test/unit/services');
     this.copy('test/unit/services/configuration.spec.js', 'test/unit/services/configuration.spec.js');
 
+    this.mkdir('test/unit/controllers');
+    this.copy('test/unit/controllers/home.spec.js', 'test/unit/controllers/home.spec.js');
+
 };
