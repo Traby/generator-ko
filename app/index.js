@@ -39,8 +39,6 @@ KoGenerator.prototype.askFor = function askFor() {
 KoGenerator.prototype.app = function app() {
     this.mkdir('app');
     this.mkdir('app/components');
-    this.mkdir('test');
-
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
     this.copy('bowerrc.json', '.bowerrc');
@@ -58,4 +56,13 @@ KoGenerator.prototype.website = function website() {
     this.copy('website/js/app.js', 'app/js/app.js');
     this.copy('website/js/home.js', 'app/js/home.js');
     this.copy('website/views/home.html', 'app/views/home.html');
+};
+
+KoGenerator.prototype.testing = function testing() {
+    this.mkdir('etc');
+    this.copy('etc/karma.conf.js', 'etc/karma.conf.js');
+    this.mkdir('test');
+    this.copy('test/test-main.js', 'test/test-main.js');
+    this.mkdir('test/unit');
+    this.copy('test/unit/app.spec.js', 'test/unit/app.spec.js');
 };

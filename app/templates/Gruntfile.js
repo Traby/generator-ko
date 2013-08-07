@@ -7,43 +7,59 @@ module.exports = function (grunt) {
         jshint: {
             all: [
                 'app/**/*.js',
-                'test/**/*.js'
+                'test/**/*.spec.js'
             ],
             options: {
-                'esnext': true,
                 'bitwise': true,
                 'camelcase': true,
                 'curly': true,
                 'eqeqeq': true,
-                'immed': true,
+                'esnext': true,
                 'indent': 4,
+                'immed': true,
                 'latedef': true,
                 'newcap': true,
                 'noarg': true,
                 'quotmark': 'single',
                 'regexp': true,
+                'strict': true,
+                'smarttabs': true,
+                'trailing': true,
                 'undef': true,
                 'unused': true,
-                'strict': true,
-                'trailing': true,
-                'smarttabs': true,
                 'white': true,
                 'ignores': [
                     'app/components/**'
                 ],
                 'globals': {
-                    require: true,
-                    define: true,
+
+                    angular: true,
                     document: true,
-                    angular: true
+                    window: true,
+
+                    // jasmine globals
+                    afterEach: true,
+                    beforeEach: true,
+                    describe: true,
+                    expect: true,
+                    it: true
+
                 }
             }
 
+        },
+
+        karma: {
+            unit: {
+                configFile: 'etc/karma.conf.js'
+            }
         }
 
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.registerTask('default', ['jshint']);
+    grunt.loadNpmTasks('grunt-karma');
+
+    grunt.registerTask('default', ['karma:unit', 'jshint']);
 
 };

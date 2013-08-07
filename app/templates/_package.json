@@ -2,13 +2,26 @@
 
     "name": "package",
     "version": "0.0.0",
-    "dependencies": {
 
+    "dependencies": {
     },
 
     "devDependencies": {
         "grunt": "latest",
-        "grunt-contrib-jshint": "latest"
+        "grunt-contrib-jshint": "latest",
+        "grunt-karma": "latest",
+
+        "karma": "latest",
+        "karma-coverage": "latest",
+        "karma-jasmine": "latest",
+        "karma-junit-reporter": "latest",
+
+        "karma-html2js-preprocessor": "latest",
+
+        "karma-chrome-launcher": "latest",
+        "karma-firefox-launcher": "latest",
+        "karma-script-launcher": "latest"
+
     }
 
 }
