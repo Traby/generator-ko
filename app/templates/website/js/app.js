@@ -6,7 +6,8 @@
 // A P P
 // --------------------------------------------------------------------------
 
-var app = angular.module('koapp', []);
+angular.module('koapp.services', []);
+var app = angular.module('koapp', ['koapp.services']);
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 

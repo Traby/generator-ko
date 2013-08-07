@@ -50,19 +50,35 @@ KoGenerator.prototype.projectfiles = function projectfiles() {
 };
 
 KoGenerator.prototype.website = function website() {
-    this.mkdir('app/js');
-    this.mkdir('app/views');
+
     this.copy('website/index.html', 'app/index.html');
+
+    this.mkdir('app/js');
     this.copy('website/js/app.js', 'app/js/app.js');
-    this.copy('website/js/home.js', 'app/js/home.js');
+
+    this.mkdir('app/js/controllers');
+    this.copy('website/js/controllers/home.js', 'app/js/controllers/home.js');
+
+    this.mkdir('app/js/services');
+    this.copy('website/js/services/configuration.js', 'app/js/services/configuration.js');
+
+    this.mkdir('app/views');
     this.copy('website/views/home.html', 'app/views/home.html');
+
 };
 
 KoGenerator.prototype.testing = function testing() {
+
     this.mkdir('etc');
     this.copy('etc/karma.conf.js', 'etc/karma.conf.js');
+
     this.mkdir('test');
     this.copy('test/test-main.js', 'test/test-main.js');
+
     this.mkdir('test/unit');
     this.copy('test/unit/app.spec.js', 'test/unit/app.spec.js');
+
+    this.mkdir('test/unit/services');
+    this.copy('test/unit/services/configuration.spec.js', 'test/unit/services/configuration.spec.js');
+
 };

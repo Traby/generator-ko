@@ -6,11 +6,11 @@
 // Home Controller
 // ======================================================================
 
-function HomeCtrl($scope) {
+function HomeCtrl($scope, cfg) {
 
     'use strict';
 
-    $scope.message = 'let\'s get busy';
+    $scope.message = cfg.getAppName();
 
 }
-HomeCtrl.$inject = ['$scope'];
+HomeCtrl.$inject = ['$scope', 'configuration'];

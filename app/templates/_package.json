@@ -16,8 +16,6 @@
         "karma-jasmine": "latest",
         "karma-junit-reporter": "latest",
 
-        "karma-html2js-preprocessor": "latest",
-
         "karma-chrome-launcher": "latest",
         "karma-firefox-launcher": "latest",
         "karma-script-launcher": "latest"

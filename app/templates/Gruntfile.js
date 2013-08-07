@@ -33,7 +33,13 @@ module.exports = function (grunt) {
                 ],
                 'globals': {
 
+                    // app globals
+                    services: true,
+
+                    // framework globals
                     angular: true,
+
+                    // browser globals
                     document: true,
                     window: true,
 
@@ -42,7 +48,9 @@ module.exports = function (grunt) {
                     beforeEach: true,
                     describe: true,
                     expect: true,
-                    it: true
+                    inject: true,
+                    it: true,
+                    module: true
 
                 }
             }

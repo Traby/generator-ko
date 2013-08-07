@@ -1,6 +1,6 @@
-module.exports = function (config) {
+module.exports = function (karma) {
 
-    config.set({
+    karma.set({
 
         // base path, that will be used to resolve files and exclude
         basePath: '../',
@@ -11,7 +11,6 @@ module.exports = function (config) {
         files: [
             'app/components/angular/angular.js',
             'app/components/angular-mocks/angular-mocks.js',
-            'app/js/*.js',
             'app/js/**/*.js',
             'test/unit/**/*.spec.js',
             'test/test-main.js'
@@ -50,7 +49,7 @@ module.exports = function (config) {
         // level of logging
         // possible values: karma.LOG_DISABLE || karma.LOG_ERROR || karma.LOG_WARN || karma.LOG_INFO || karma.LOG_DEBUG
         // CLI --log-level debug
-        // logLevel: karma.LOG_INFO,
+        logLevel: karma.LOG_INFO,
 
         // enable / disable watching file and executing tests whenever any file changes
         // CLI --auto-watch --no-auto-watch
@@ -81,7 +80,7 @@ module.exports = function (config) {
 
         // compile coffee scripts
         preprocessors: {
-            'app/js/*.js': 'coverage'
+            'app/js/**/*.js': 'coverage'
         },
 
         plugins: [

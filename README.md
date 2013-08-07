@@ -12,4 +12,8 @@ A generator for Yeoman.
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
 
 ## Roadmap
-- build step
+- unit tests
+- e2e
+- bootstrap less
+- minification and concatination
+- deploy step

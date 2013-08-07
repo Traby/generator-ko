@@ -1,4 +1,4 @@
-describe('koApp Application Unit Test', function () {
+describe('koApp', function () {
 
     'use strict';
 
@@ -9,21 +9,20 @@ describe('koApp Application Unit Test', function () {
         dependencies = module.requires;
     });
 
-    it('should be registered as application module', function () {
+    it('should be defined', function () {
         expect(module).not.toBeUndefined();
     });
 
-    describe('Check defined dependencies:', function () {
+    describe('check defined dependencies:', function () {
 
         var hasModule = function (module) {
             return dependencies.indexOf(module) >= 0;
         };
 
-        //it('should have controllers has dependency', function() {
-        //   expect(hasModule('controllers')).toEqual(true);
-        //});
+        it('check services module is dependency of app', function () {
+            expect(hasModule('koapp.services')).toBe(true);
+        });
 
     });
 
 });
-
