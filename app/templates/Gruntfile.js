@@ -50,7 +50,8 @@ module.exports = function (grunt) {
                     expect: true,
                     inject: true,
                     it: true,
-                    module: true
+                    module: true,
+                    spyOn: true
 
                 }
             }

@@ -14,6 +14,8 @@ describe('home controller', function () {
 
         module('app');
 
+        spyOn(cfgMock, 'getAppName').andCallThrough();
+
         inject(function ($rootScope, $controller) {
             scope = $rootScope.$new();
             controller = $controller('HomeCtrl', {
@@ -27,6 +29,7 @@ describe('home controller', function () {
     it('should be defined', function () {
         expect(scope.title).toBeDefined();
         expect(scope.title).toBe('blah blah');
+        expect(cfgMock.getAppName).toHaveBeenCalled();
     });
 
 });
