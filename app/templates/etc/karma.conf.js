@@ -12,8 +12,7 @@ module.exports = function (karma) {
             'app/components/angular/angular.js',
             'app/components/angular-mocks/angular-mocks.js',
             'app/js/**/*.js',
-            'test/unit/**/*.spec.js',
-            'test/test-main.js'
+            'test/unit/**/*.spec.js'
         ],
 
         // list of files to exclude

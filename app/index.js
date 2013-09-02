@@ -79,7 +79,6 @@ KoGenerator.prototype.testing = function testing() {
     this.copy('etc/karma.conf.js', 'etc/karma.conf.js');
 
     this.mkdir('test');
-    this.copy('test/test-main.js', 'test/test-main.js');
 
     this.mkdir('test/unit');
     this.copy('test/unit/app.spec.js', 'test/unit/app.spec.js');
