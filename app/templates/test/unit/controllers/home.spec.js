@@ -13,15 +13,13 @@ describe('home controller', function () {
         spyOn(cfg, 'getAppName').andCallThrough();
     }));
 
-    beforeEach(function () {
-        inject(function ($rootScope, $controller) {
-            scope = $rootScope.$new();
-            controller = $controller('HomeCtrl', {
-                $scope: scope,
-                configuration: cfg
-            });
+    beforeEach(inject(function ($rootScope, $controller) {
+        scope = $rootScope.$new();
+        controller = $controller('HomeCtrl', {
+            $scope: scope,
+            configuration: cfg
         });
-    });
+    }));
 
     it('should be defined', function () {
         expect(scope.title).toBeDefined();
