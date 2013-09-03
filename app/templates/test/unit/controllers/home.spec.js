@@ -5,21 +5,23 @@ describe('home controller', function () {
     var scope, controller, cfg;
 
     beforeEach(function () {
+
         module('app');
-    });
 
-    beforeEach(inject(function ($injector) {
-        cfg = $injector.get('configuration');
-        spyOn(cfg, 'getAppName').andCallThrough();
-    }));
-
-    beforeEach(inject(function ($rootScope, $controller) {
-        scope = $rootScope.$new();
-        controller = $controller('HomeCtrl', {
-            $scope: scope,
-            configuration: cfg
+        inject(function ($injector) {
+            cfg = $injector.get('configuration');
+            spyOn(cfg, 'getAppName').andCallThrough();
         });
-    }));
+
+        inject(function ($rootScope, $controller) {
+            scope = $rootScope.$new();
+            controller = $controller('HomeCtrl', {
+                $scope: scope,
+                configuration: cfg
+            });
+        });
+
+    });
 
     it('should be defined', function () {
         expect(scope.title).toBeDefined();
