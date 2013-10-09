@@ -9,8 +9,8 @@ module.exports = function (karma) {
 
         // list of files / patterns to load in the browser
         files: [
-            'app/components/angular/angular.js',
-            'app/components/angular-mocks/angular-mocks.js',
+            'app/lib/angular/angular.js',
+            'app/lib/angular-mocks/angular-mocks.js',
             'app/js/**/*.js',
             'test/unit/**/*.spec.js'
         ],

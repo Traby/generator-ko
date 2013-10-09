@@ -29,7 +29,7 @@ module.exports = function (grunt) {
                 'unused': true,
                 'white': true,
                 'ignores': [
-                    'app/components/**'
+                    'app/lib/**'
                 ],
                 'globals': {
 
