@@ -38,16 +38,14 @@ KoGenerator.prototype.askFor = function askFor() {
 
 KoGenerator.prototype.app = function app() {
     this.mkdir('app');
+    this.mkdir('app/lib');
     this.mkdir('etc');
-    this.mkdir('app/components');
-    this.copy('_package.json', 'package.json');
-    this.copy('_bower.json', 'bower.json');
-    this.copy('bowerrc.json', '.bowerrc');
-    this.copy('Gruntfile.js', 'Gruntfile.js');
-};
-
-KoGenerator.prototype.projectfiles = function projectfiles() {
-    this.copy('editorconfig', '.editorconfig');
+    this.copy('_bowerrc.json',     '.bowerrc');
+    this.copy('_gitignore.txt',    '.gitignore');
+    this.copy('_editorconfig.txt', '.editorconfig');
+    this.copy('package.json',      'package.json');
+    this.copy('bower.json',        'bower.json');
+    this.copy('Gruntfile.js',      'Gruntfile.js');
 };
 
 KoGenerator.prototype.website = function website() {
