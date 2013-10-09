@@ -36,45 +36,67 @@ KoGenerator.prototype.askFor = function askFor() {
 
 };
 
-KoGenerator.prototype.app = function app() {
-    this.mkdir('app');
-    this.mkdir('app/lib');
-    this.mkdir('etc');
+KoGenerator.prototype.base = function app() {
+
     this.copy('_bowerrc.json',     '.bowerrc');
-    this.copy('_gitignore.txt',    '.gitignore');
     this.copy('_editorconfig.txt', '.editorconfig');
-    this.copy('package.json',      'package.json');
+    this.copy('_gitignore.txt',    '.gitignore');
     this.copy('bower.json',        'bower.json');
+    this.copy('package.json',      'package.json');
     this.copy('Gruntfile.js',      'Gruntfile.js');
+
 };
 
-KoGenerator.prototype.website = function website() {
+KoGenerator.prototype.scripts = function style() {
 
-    this.copy('website/index.html', 'app/index.html');
+    this.mkdir('scripts');
+    this.copy('scripts/loadpage.js', 'scripts/loadpage.js');
+    this.copy('scripts/server.js', 'scripts/server.js');
+
+    this.mkdir('scripts/tasks');
+    this.copy('scripts/tasks/util.js', 'scripts/tasks/util.js');
+    this.copy('scripts/tasks/setup.js', 'scripts/tasks/setup.js');
+    this.copy('scripts/tasks/testing.js', 'scripts/tasks/testing.js');
+
+};
+
+KoGenerator.prototype.app = function website() {
+
+    this.mkdir('app');
+    this.mkdir('app/lib'); // for bower components
+
+    this.copy('app/index.html', 'app/index.html');
 
     this.mkdir('app/js');
-    this.copy('website/js/app.js', 'app/js/app.js');
+    this.copy('app/js/app.js', 'app/js/app.js');
 
     this.mkdir('app/js/controllers');
-    this.copy('website/js/controllers/home.js', 'app/js/controllers/home.js');
+    this.copy('app/js/controllers/home.js', 'app/js/controllers/home.js');
 
     this.mkdir('app/js/services');
-    this.copy('website/js/services/configuration.js', 'app/js/services/configuration.js');
+    this.copy('app/js/services/configuration.js', 'app/js/services/configuration.js');
 
     this.mkdir('app/views');
-    this.copy('website/views/home.html', 'app/views/home.html');
+    this.copy('app/views/home.html', 'app/views/home.html');
 
 };
 
-KoGenerator.prototype.style = function style() {
+KoGenerator.prototype.less = function style() {
 
-    this.copy('etc/main.less', 'etc/main.less');
+    this.mkdir('etc');
+    this.mkdir('etc/less');
+    this.copy('etc/less/main.less', 'etc/less/main.less');
 
 };
 
 KoGenerator.prototype.testing = function testing() {
 
-    this.copy('etc/karma.conf.js', 'etc/karma.conf.js');
+    this.mkdir('etc');
+    this.mkdir('etc/testing');
+    this.copy('etc/testing/karma-browser.conf.js', 'etc/testing/karma-browser.conf.js');
+    this.copy('etc/testing/karma-phantom.conf.js', 'etc/testing/karma-phantom.conf.js');
+    this.copy('etc/testing/protractor-browser.conf.js', 'etc/testing/protractor-browser.conf.js');
+    this.copy('etc/testing/protractor-phantom.conf.js', 'etc/testing/protractor-phantom.conf.js');
 
     this.mkdir('test');
 
@@ -86,5 +108,8 @@ KoGenerator.prototype.testing = function testing() {
 
     this.mkdir('test/unit/controllers');
     this.copy('test/unit/controllers/home.spec.js', 'test/unit/controllers/home.spec.js');
+
+    this.mkdir('test/e2e');
+    this.copy('test/e2e/app.spec.js', 'test/e2e/app.spec.js');
 
 };

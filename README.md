@@ -12,6 +12,6 @@ A generator for Yeoman.
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
 
 ## Roadmap
-- e2e
+- README
 - minification and concatination
 - deploy step

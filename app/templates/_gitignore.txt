@@ -1,3 +1,6 @@
+/app/style.css
 /app/lib
+/etc/protractor.conf.js
 /node_modules
 /reports
+/selenium

@@ -2,6 +2,14 @@ module.exports = function (grunt) {
 
     'use strict';
 
+	grunt.loadTasks('scripts/tasks');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-recess');
+
+    grunt.registerTask('default', ['test', 'jshint']);
+    grunt.registerTask('build', ['recess']);
+
     grunt.initConfig({
 
         jshint: {
@@ -51,7 +59,10 @@ module.exports = function (grunt) {
                     inject: true,
                     it: true,
                     module: true,
-                    spyOn: true
+                    spyOn: true,
+
+                    // jasmine globals
+                    protractor: true
 
                 }
             }
@@ -60,13 +71,16 @@ module.exports = function (grunt) {
 
         karma: {
             unit: {
-                configFile: 'etc/karma.conf.js'
+                configFile: 'etc/testing/karma-browser.conf.js'
+            },
+            headless: {
+                configFile: 'etc/testing/karma-phantom.conf.js'
             }
         },
 
         recess: {
             build:  {
-                src: [ 'etc/main.less' ],
+                src: [ 'etc/less/main.less' ],
                 dest: 'app/style.css',
                 options: {
                     compile: true,
@@ -79,12 +93,5 @@ module.exports = function (grunt) {
         }
 
     });
-
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-recess');
-
-    grunt.registerTask('test', ['karma:unit', 'jshint']);
-    grunt.registerTask('default', ['recess']);
 
 };
