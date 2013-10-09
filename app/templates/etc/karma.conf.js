@@ -25,12 +25,12 @@ module.exports = function (karma) {
 
         junitReporter: {
             // will be resolved to basePath (in the same way as files/exclude patterns)
-            outputFile: 'etc/reports/test-results.xml'
+            outputFile: 'reports/unit/test-results.xml'
         },
 
         coverageReporter: {
             type : 'html',
-            dir  : 'etc/reports/coverage/'
+            dir  : 'reports/unit/'
         },
 
         // web server port
