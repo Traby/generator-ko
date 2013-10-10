@@ -41,6 +41,7 @@ KoGenerator.prototype.base = function app() {
     this.copy('_bowerrc.json',     '.bowerrc');
     this.copy('_editorconfig.txt', '.editorconfig');
     this.copy('_gitignore.txt',    '.gitignore');
+    this.copy('_jshintrc.json',      '.jshintrc');
     this.copy('bower.json',        'bower.json');
     this.copy('package.json',      'package.json');
     this.copy('Gruntfile.js',      'Gruntfile.js');
