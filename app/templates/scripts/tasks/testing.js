@@ -174,7 +174,7 @@ module.exports = function (grunt) {
 		var timedCallback = function(cb) {
 
 			var run, timer;
-			var timeout = (arguments.length === 2 ? Number(arguments[1]) : 60000);
+			var timeout = (arguments.length === 2 ? Number(arguments[1]) : 30000);
 
 			run = function () {
 				if (timer) {
