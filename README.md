@@ -43,11 +43,10 @@ Link the project into the global node modules directory:
 
 	cd generator-ko
 	npm link
-	
+
 Install dependencies:
 
-	npm install -g yo generator-generator bower grunt-cli
-
+	npm install -g yo bower grunt-cli
 
 You are now finally ready to start generating projects.
 
