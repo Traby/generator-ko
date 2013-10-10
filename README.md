@@ -27,7 +27,7 @@ It is also recommended to configure npm (node package manager) to install global
 	npm config set prefix $HOME/.node-modules
 
 Be sure to add the `$HOME/.node-modules/bin` directory to your `PATH`.
-	
+
 Note: do not use the directory `$HOME/.npm` as this directory is already used by npm to cache modules.
 
 
@@ -38,7 +38,7 @@ Before you can start generating skeleton projects the generator must be installe
 Check out the project with git:
 
 	git clone https://github.com/kwo/generator-ko.git
-	
+
 Link the project into the global node modules directory:
 
 	cd generator-ko
@@ -55,36 +55,36 @@ You are now finally ready to start generating projects.
 Create a directory for your new project. From inside the project directory, run the generator via the following command,
 
 	yo ko
-	
+
 To complete the installation, by installing selenium and updating npm and bower dependencies, run the following command,
 
 	grunt setup
-	
+
 Compile project artifacts, for example, the css file,
 
 	grunt build
-	
+
 View the project,
 
 	grunt server
-	
+
 Run tests,
 
 	grunt test
-	
+
 View the test reports,
 
 	grunt report:unit
 	grunt report:e2e
-	
+
 Clean up old test reports,
 
 	grunt report:clean
-	
+
 Run the tests in headless mode,
 
 	grunt jenkins
-	
+
 
 ## Roadmap
 - minification and concatenation
