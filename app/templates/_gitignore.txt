@@ -1,5 +1,6 @@
 /app/style.css
 /app/lib
+/deploy
 /etc/protractor.conf.js
 /node_modules
 /reports

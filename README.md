@@ -8,6 +8,7 @@ A [Yeoman](http://yeoman.io/) generator for [AngularJS](http://angularjs.org/) p
   - Management of web packages via [Bower](http://bower.io/).
   - Automation of common tasks via [Grunt](http://gruntjs.com/).
   - [Bootstrap](http://getbootstrap.com/) 3.0 support with the [Less](http://lesscss.org/) stylesheet language.
+  - Concatenation and minification of javascript files.
   - Unit testing with [Jasmine](http://pivotal.github.io/jasmine/) via the [Karma](http://karma-runner.github.io/) test runner.
   - E2E (end-to-end) testing with [Selenium](http://docs.seleniumhq.org/) and [Protractor](https://github.com/angular/protractor), either with a real browser such as Chrome or with [PhantomJS](http://phantomjs.org/) for headless testing in a CI (continuous integration) environment.
   - No RequireJS.
@@ -87,7 +88,9 @@ Run the tests in headless mode,
 
 
 ## Roadmap
-- minification and concatenation
+- move main less file to top-level dir
+- add option to grunt server to test deploy
+- replace report:clean with simple clean task
 - deploy step
 
 ## License

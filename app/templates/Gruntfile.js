@@ -4,6 +4,18 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
 
+		clean: {
+			deploy:  ['deploy'],
+			afterbuild:  ['deploy/app/lib', 'deploy/app/js'],
+			reports: ['reports']
+		},
+
+		copy: {
+			deploy: {
+				files: [ {src: ['app/**'], dest: 'deploy/'} ]
+			}
+		},
+
         jshint: {
 			all: {
 				src: [ 'app/**/*.js', 'test/**/*.spec.js' ],
@@ -46,18 +58,31 @@ module.exports = function (grunt) {
 			test: {
 				args: [ ]
 			}
+		},
+
+		'useminPrepare': {
+			html: ['deploy/app/index.html']
+		},
+		'usemin': {
+			html: ['deploy/app/index.html']
 		}
+
 
     });
 
 	grunt.loadTasks('scripts/tasks');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-recess');
+    grunt.loadNpmTasks('grunt-usemin');
 
     grunt.registerTask('default', ['test', 'jshint']);
-    grunt.registerTask('build', ['recess']);
+    grunt.registerTask('build', ['clean:deploy', 'recess', 'copy', 'useminPrepare', 'concat', 'uglify', 'usemin', 'clean:afterbuild']);
 
     // local server
     grunt.registerTask('server', 'run local server', function() {
