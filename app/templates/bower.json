@@ -1,16 +1,14 @@
 {
-	"name": "package",
-	"version": "0.0.0",
+	"name": "mysite",
+	"version": "0.0.1",
 
 	"dependencies": {
-	    "angular":   "latest",
-	    "bootstrap": "latest"
+	    "angular":   "~1.0.8",
+	    "bootstrap": "~3.0.0"
 	},
 
     "devDependencies": {
-        "angular-mocks":    "latest",
-        "angular-resource": "latest",
-        "angular-scenario": "latest"
+        "angular-mocks": "~1.0.8"
     }
 
 }
