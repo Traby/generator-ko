@@ -1,25 +1,31 @@
 var express = require('express');
-var fs      = require('fs');
-var path    = require('path');
+var path = require('path');
 
-var root = path.resolve(__dirname, '..', 'app');
 var app  = express();
+var port = 8000;
+var root = null;
 
-/* Configuration */
+app.configure('development', function () {
+	root =  path.resolve(__dirname, '..', 'app');
+});
+
+app.configure('production', function () {
+	root =  path.resolve(__dirname, '..', 'deploy', 'app');
+});
+
 app.configure(function () {
-    app.use(express.bodyParser());
-    app.use(express.methodOverride());
-    app.use(express.logger());
-    //app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-    app.use(express.static(root));
-    app.use(app.router);
+	app.use(express.bodyParser());
+	app.use(express.methodOverride());
+	app.use(express.logger());
+	app.use(express.static(root));
+	app.use(app.router);
 });
 
 /* Default Mapping */
-app.get('/', function(req, res) {
-    res.redirect('index.html');
+app.get('/', function (req, res) {
+	res.redirect('index.html');
 });
 
 /* Launch server */
-app.listen(8000);
-console.log('serving app (', root, ') at http://localhost:8000');
+app.listen(port);
+console.log('Serving %s on port %d', root, port);

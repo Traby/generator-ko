@@ -52,10 +52,18 @@ module.exports = function (grunt) {
 		express: {
 			options: {
 				background: false,
-				port: 8000,
 				script: 'scripts/server.js'
 			},
 			test: {
+				options: {
+					node_env: 'development'
+				},
+				args: [ ]
+			},
+			prod: {
+				options: {
+					node_env: 'production'
+				},
 				args: [ ]
 			}
 		},
@@ -95,7 +103,11 @@ module.exports = function (grunt) {
 			}, 1000);
 		}
 
-		grunt.task.run('express:test');
+		if (this.flags.deploy) {
+			grunt.task.run('express:prod');
+		} else {
+			grunt.task.run('express:test');
+		}
 
     });
 

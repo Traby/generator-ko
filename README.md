@@ -89,7 +89,6 @@ Run the tests in headless mode,
 
 ## Roadmap
 - move main less file to top-level dir
-- add option to grunt server to test deploy
 - replace report:clean with simple clean task
 - deploy step
 
