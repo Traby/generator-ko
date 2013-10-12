@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 
 		clean: {
 			deploy:  ['deploy'],
-			afterbuild:  ['deploy/app/lib', 'deploy/app/js'],
+			build:  ['deploy/app/lib', 'deploy/app/js'],
 			reports: ['reports']
 		},
 
@@ -91,7 +91,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-usemin');
 
     grunt.registerTask('default', ['test', 'jshint']);
-    grunt.registerTask('build', ['clean:deploy', 'recess', 'copy', 'useminPrepare', 'concat', 'uglify', 'usemin', 'clean:afterbuild']);
+    grunt.registerTask('build', ['clean:deploy', 'recess', 'copy', 'useminPrepare', 'concat', 'uglify', 'usemin', 'clean:build']);
 
     // local server
     grunt.registerTask('server', 'run local server', function() {
