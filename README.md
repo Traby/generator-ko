@@ -65,9 +65,13 @@ Compile project artifacts, for example, the css file,
 
 	grunt build
 
-View the project,
+View the project (development mode),
 
 	grunt server
+
+View the project (deployed version),
+
+	grunt server:deploy
 
 Run tests,
 
@@ -88,6 +92,7 @@ Run the tests in headless mode,
 
 
 ## Roadmap
+- remove hardcoded references to localhost:8000
 - deploy step
 
 ## License
