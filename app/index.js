@@ -84,20 +84,18 @@ KoGenerator.prototype.app = function website() {
 
 KoGenerator.prototype.less = function style() {
 
-    this.mkdir('etc');
-    this.mkdir('etc/less');
-    this.copy('etc/less/main.less', 'etc/less/main.less');
+    this.mkdir('css');
+    this.copy('css/main.less', 'css/main.less');
 
 };
 
 KoGenerator.prototype.testing = function testing() {
 
     this.mkdir('etc');
-    this.mkdir('etc/testing');
-    this.copy('etc/testing/karma-browser.conf.js', 'etc/testing/karma-browser.conf.js');
-    this.copy('etc/testing/karma-phantom.conf.js', 'etc/testing/karma-phantom.conf.js');
-    this.copy('etc/testing/protractor-browser.conf.js', 'etc/testing/protractor-browser.conf.js');
-    this.copy('etc/testing/protractor-phantom.conf.js', 'etc/testing/protractor-phantom.conf.js');
+    this.copy('etc/karma-browser.conf.js', 'etc/karma-browser.conf.js');
+    this.copy('etc/karma-phantom.conf.js', 'etc/karma-phantom.conf.js');
+    this.copy('etc/protractor-browser.conf.js', 'etc/protractor-browser.conf.js');
+    this.copy('etc/protractor-phantom.conf.js', 'etc/protractor-phantom.conf.js');
 
     this.mkdir('test');
 

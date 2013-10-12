@@ -63,7 +63,7 @@ module.exports = function (grunt) {
 
 			var args = [];
 			args.push('node_modules/protractor/bin/protractor');
-			args.push('etc/testing/protractor.conf.js');
+			args.push('etc/protractor.conf.js');
 
 			var filename = 'reports/e2e/report-' + grunt.template.date(new Date(), DATE_FORMAT) + '.txt';
 			grunt.file.mkdir('reports/e2e');
@@ -118,8 +118,8 @@ module.exports = function (grunt) {
 				grunt.fail.fatal('Option \'selenium.jar\' not set, exiting.');
 			}
 
-			var tmpFile = 'etc/testing/protractor.conf.js';
-			var cfgFile = (headless ? 'etc/testing/protractor-phantom.conf.js' : 'etc/testing/protractor-browser.conf.js');
+			var tmpFile = 'etc/protractor.conf.js';
+			var cfgFile = (headless ? 'etc/protractor-phantom.conf.js' : 'etc/protractor-browser.conf.js');
 
 			var portchecker = require('portchecker');
 			portchecker.getFirstAvailable(4444, 9999, 'localhost', function(port, host) {

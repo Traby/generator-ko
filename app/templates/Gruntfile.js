@@ -28,24 +28,25 @@ module.exports = function (grunt) {
 
         karma: {
             unit: {
-                configFile: 'etc/testing/karma-browser.conf.js'
+                configFile: 'etc/karma-browser.conf.js'
             },
             headless: {
-                configFile: 'etc/testing/karma-phantom.conf.js'
+                configFile: 'etc/karma-phantom.conf.js'
             }
         },
 
         recess: {
             build:  {
-                src: [ 'etc/less/main.less' ],
+                src: [ 'css/main.less' ],
                 dest: 'app/style.css',
                 options: {
-                    compile: true,
+					compile: true,
                     compress: true,
                     noUnderscores: false,
                     noIDs: false,
-                    zeroUnits: false
-                }
+                    zeroUnits: false,
+					includePath: ['app/lib/bootstrap/less']
+                 }
             }
         },
 

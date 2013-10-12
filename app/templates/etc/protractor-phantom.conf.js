@@ -6,13 +6,14 @@ exports.config = {
 
 	// ----- What tests to run -----
 	specs: [
-		'../../test/e2e/**/*.js'
+		'../test/e2e/**/*.js'
 	],
 
 	// For a full list of available capabilities, see
 	// https://code.google.com/p/selenium/wiki/DesiredCapabilities
 	capabilities: {
-		'browserName': 'chrome'
+		'browserName': 'phantomjs',
+		'phantomjs.binary.path': 'node_modules/phantomjs/bin/phantomjs'
 	},
 
 	// A base URL for your application under test. Calls to protractor.get()
@@ -33,10 +34,10 @@ exports.config = {
 		isVerbose: true,
 
 		// If true, print colors to the terminal.
-		showColors: true,
+		showColors: false,
 
 		// If true, include stack traces in failures.
-		includeStackTrace: false,
+		includeStackTrace: true,
 
 		// Default time to wait in ms before a test fails.
 		defaultTimeoutInterval: 5000

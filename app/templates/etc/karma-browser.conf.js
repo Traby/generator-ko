@@ -3,7 +3,7 @@ module.exports = function (karma) {
     karma.set({
 
         // base path, that will be used to resolve files and exclude
-        basePath: '../../',
+        basePath: '../',
 
         frameworks: ['jasmine'],
 
@@ -63,7 +63,7 @@ module.exports = function (karma) {
         // - PhantomJS
         // - IE (only Windows)
         // CLI --browsers Chrome,Firefox,Safari
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
 
         // If browser does not capture in given timeout [ms], kill it
         // CLI --capture-timeout 5000
@@ -85,7 +85,7 @@ module.exports = function (karma) {
         plugins: [
           'karma-coverage',
           'karma-jasmine',
-          'karma-phantomjs-launcher',
+          'karma-chrome-launcher',
           'karma-junit-reporter'
         ]
 
