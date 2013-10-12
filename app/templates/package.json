@@ -30,8 +30,7 @@
 		"open": "~0.0.4",
 		"phantomjs": "~1.9.2-1",
 		"portchecker": "~0.1.2",
-		"protractor": "~0.10.0",
-		"remove": "~0.1.5"
+		"protractor": "~0.10.0"
 
 	}
 

@@ -80,7 +80,7 @@ View the test reports,
 
 Clean up old test reports,
 
-	grunt report:clean
+	grunt clean:report
 
 Run the tests in headless mode,
 
@@ -88,8 +88,6 @@ Run the tests in headless mode,
 
 
 ## Roadmap
-- move main less file to top-level dir
-- replace report:clean with simple clean task
 - deploy step
 
 ## License
