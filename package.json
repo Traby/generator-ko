@@ -18,7 +18,7 @@
 		"url": "git://github.com/kwo/generator-ko.git"
 	},
 	"dependencies": {
-		"yeoman-generator": "latest"
+		"yeoman-generator": "0.13.4"
 	},
 	"engines": {
 		"node": ">=0.8.0"
