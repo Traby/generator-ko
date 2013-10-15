@@ -20,8 +20,9 @@ describe('app', function () {
         };
 
         it('check services module is dependency of app', function () {
-            expect(hasModule('services')).toBe(true);
-            expect(hasModule('controllers')).toBe(true);
+            expect(hasModule('ngRoute')).toBeTruthy();
+            expect(hasModule('services')).toBeTruthy();
+            expect(hasModule('controllers')).toBeTruthy();
         });
 
     });

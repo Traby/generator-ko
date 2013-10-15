@@ -24,9 +24,8 @@ describe('home controller', function () {
     });
 
     it('should be defined', function () {
-        expect(scope.title).toBeDefined();
-        expect(scope.title).toBe('My App');
         expect(cfg.getAppName).toHaveBeenCalled();
+        expect(scope.title).toEqual('My App');
     });
 
 });
