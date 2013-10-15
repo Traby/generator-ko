@@ -5,7 +5,6 @@ module.exports = function (grunt) {
 	var fs = require('fs');
 	var open = require('open');
 	var path = require('path');
-	var remove = require('remove');
 	var spawn = require('child_process').spawn;
 	var util = require('./util')(grunt);
 
