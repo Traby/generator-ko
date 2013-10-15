@@ -8,7 +8,7 @@
 
 angular.module('services', []);
 angular.module('controllers', []);
-var app = angular.module('app', ['services', 'controllers']);
+var app = angular.module('app', ['ngRoute', 'services', 'controllers']);
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
