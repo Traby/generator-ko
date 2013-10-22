@@ -52,6 +52,7 @@ module.exports = function (grunt) {
       }
     },
 
+    // jshint camelcase: false
     express: {
       options: {
         background: false,
@@ -70,6 +71,7 @@ module.exports = function (grunt) {
         args: [ ]
       }
     },
+    // jshint camelcase: true
 
     'useminPrepare': {
       html: ['deploy/app/index.html']
