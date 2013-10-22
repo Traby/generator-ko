@@ -8,6 +8,7 @@
   "indent": 2,
   "immed": true,
   "latedef": true,
+  "laxcomma": true,
   "newcap": true,
   "noarg": true,
   "quotmark": "single",
@@ -41,8 +42,12 @@
     "module": true,
     "spyOn": true,
 
-    // jasmine globals
-    "protractor": true
+    // e2e globals
+    "protractor": true,
+
+    // nodejs
+    "setTimeout": true,
+    "require": true
 
   }
 }
