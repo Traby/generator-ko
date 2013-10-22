@@ -1,31 +1,31 @@
 describe('home controller', function () {
 
-    'use strict';
+  'use strict';
 
-    var scope, controller, cfg;
+  var scope, controller, cfg;
 
-    beforeEach(function () {
+  beforeEach(function () {
 
-        module('app');
+    module('app');
 
-        inject(function ($injector) {
-            cfg = $injector.get('configuration');
-            spyOn(cfg, 'getAppName').andCallThrough();
-        });
-
-        inject(function ($rootScope, $controller) {
-            scope = $rootScope.$new();
-            controller = $controller('HomeCtrl', {
-                $scope: scope,
-                configuration: cfg
-            });
-        });
-
+    inject(function ($injector) {
+      cfg = $injector.get('configuration');
+      spyOn(cfg, 'getAppName').andCallThrough();
     });
 
-    it('should be defined', function () {
-        expect(cfg.getAppName).toHaveBeenCalled();
-        expect(scope.title).toEqual('My App');
+    inject(function ($rootScope, $controller) {
+      scope = $rootScope.$new();
+      controller = $controller('HomeCtrl', {
+        $scope: scope,
+        configuration: cfg
+      });
     });
+
+  });
+
+  it('should be defined', function () {
+    expect(cfg.getAppName).toHaveBeenCalled();
+    expect(scope.title).toEqual('My App');
+  });
 
 });

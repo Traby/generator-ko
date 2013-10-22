@@ -8,14 +8,14 @@
 
 angular.module('services').factory('configuration', [function () {
 
-    'use strict';
+  'use strict';
 
-    function getAppName() {
-        return 'My App';
-    }
+  function getAppName() {
+    return 'My App';
+  }
 
-    return {
-        getAppName: getAppName
-    };
+  return {
+    getAppName: getAppName
+  };
 
 }]);

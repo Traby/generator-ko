@@ -8,8 +8,8 @@
 
 angular.module('controllers').controller('HomeCtrl', ['$scope', 'configuration', function ($scope, cfg) {
 
-    'use strict';
+  'use strict';
 
-    $scope.title = cfg.getAppName();
+  $scope.title = cfg.getAppName();
 
 }]);

@@ -12,14 +12,14 @@ var app = angular.module('app', ['ngRoute', 'services', 'controllers']);
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-    'use strict';
+  'use strict';
 
-    $locationProvider.hashPrefix('!');
+  $locationProvider.hashPrefix('!');
 
-    // load routes
-    $routeProvider.when('/home', {templateUrl: 'views/home.html'});
+  // load routes
+  $routeProvider.when('/home', {templateUrl: 'views/home.html'});
 
-    // set fallback path to first view
-    $routeProvider.otherwise({redirectTo: '/home'});
+  // set fallback path to first view
+  $routeProvider.otherwise({redirectTo: '/home'});
 
 }]);

@@ -1,47 +1,47 @@
 // A reference configuration file.
 exports.config = {
 
-	// The address of a running selenium server.
-	seleniumAddress: 'http://localhost:4444/wd/hub',
+  // The address of a running selenium server.
+  seleniumAddress: 'http://localhost:4444/wd/hub',
 
-	// ----- What tests to run -----
-	specs: [
-		'../test/e2e/**/*.js'
-	],
+  // ----- What tests to run -----
+  specs: [
+    '../test/e2e/**/*.js'
+  ],
 
-	// For a full list of available capabilities, see
-	// https://code.google.com/p/selenium/wiki/DesiredCapabilities
-	capabilities: {
-		'browserName': 'phantomjs',
-		'phantomjs.binary.path': 'node_modules/phantomjs/bin/phantomjs'
-	},
+  // For a full list of available capabilities, see
+  // https://code.google.com/p/selenium/wiki/DesiredCapabilities
+  capabilities: {
+    'browserName': 'phantomjs',
+    'phantomjs.binary.path': 'node_modules/phantomjs/bin/phantomjs'
+  },
 
-	// A base URL for your application under test. Calls to protractor.get()
-	// with relative paths will be prepended with this.
-	baseUrl: 'http://localhost:8000',
+  // A base URL for your application under test. Calls to protractor.get()
+  // with relative paths will be prepended with this.
+  baseUrl: 'http://localhost:8000',
 
-	// Selector for the element housing the angular app - this defaults to
-	// body, but is necessary if ng-app is on a descendant of <body>
-	rootElement: 'body',
+  // Selector for the element housing the angular app - this defaults to
+  // body, but is necessary if ng-app is on a descendant of <body>
+  rootElement: 'body',
 
-	// ----- Options to be passed to minijasminenode -----
-	jasmineNodeOpts: {
+  // ----- Options to be passed to minijasminenode -----
+  jasmineNodeOpts: {
 
-		// onComplete will be called just before the driver quits.
-		onComplete: null,
+    // onComplete will be called just before the driver quits.
+    onComplete: null,
 
-		// If true, display spec names.
-		isVerbose: true,
+    // If true, display spec names.
+    isVerbose: true,
 
-		// If true, print colors to the terminal.
-		showColors: false,
+    // If true, print colors to the terminal.
+    showColors: false,
 
-		// If true, include stack traces in failures.
-		includeStackTrace: true,
+    // If true, include stack traces in failures.
+    includeStackTrace: true,
 
-		// Default time to wait in ms before a test fails.
-		defaultTimeoutInterval: 5000
+    // Default time to wait in ms before a test fails.
+    defaultTimeoutInterval: 5000
 
-	}
+  }
 
 };
