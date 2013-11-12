@@ -2,6 +2,7 @@ module.exports = function (grunt) {
 
   'use strict';
 
+  var async = require('async');
   var fs = require('fs');
   var open = require('open');
   var path = require('path');
@@ -198,7 +199,7 @@ module.exports = function (grunt) {
     };
 
     var series = [util.javaVersion, startNode, util.seleniumVersion, startSelenium, loadPage, startProtractor];
-    grunt.util.async.forEachSeries(series, execute, function (err) {
+    async.forEachSeries(series, execute, function (err) {
       done(err);
     });
 

@@ -2,6 +2,7 @@ module.exports = function (grunt) {
 
   'use strict';
 
+  var async = require('async');
   var exec = require('child_process').exec;
   var fs = require('fs');
   var spawn = require('child_process').spawn;
@@ -35,6 +36,8 @@ module.exports = function (grunt) {
 
       // TODO: put into config file
       if (version === '2.35.0' && md5 !== 'bc34d2b9727c1ac3aa45fe98dd666cbf') {
+        cb(new Error('Selenium JAR with faulty checksum.'));
+      } else if (version === '2.37.0' && md5 !== 'f6c80b18863e9b8f86b5269a53466160') {
         cb(new Error('Selenium JAR with faulty checksum.'));
       } else {
         cb();
@@ -75,11 +78,11 @@ module.exports = function (grunt) {
       });
     };
 
-    grunt.util.async.series([
+    async.series([
 
       // which versions of git, node and java?
       function (cb1) {
-        grunt.util.async.parallel([
+        async.parallel([
           function (cb2) {
             util.javaVersion(cb2);
           },
@@ -110,11 +113,11 @@ module.exports = function (grunt) {
       function (cb1) {
 
         // update local npm and bower components in parallel
-        grunt.util.async.parallel([
+        async.parallel([
 
           // update local npm modules and afterwards install selenium
           function (cb2) {
-            grunt.util.async.series([
+            async.series([
               function (cb3) {
                 execute('npm install', cb3);
               },
@@ -138,7 +141,7 @@ module.exports = function (grunt) {
           // update bower components
           function (cb2) {
             var commands = ['bower install', 'bower update', 'bower prune'];
-            grunt.util.async.forEachSeries(commands, execute, function (err) {
+            async.forEachSeries(commands, execute, function (err) {
               cb2(err);
             });
           }

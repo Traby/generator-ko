@@ -9,6 +9,7 @@
   "devDependencies": {
 
     "ansi-remover": "~0.0.2",
+    "async": "~0.2.9",
     "express": "~3.4.0",
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
